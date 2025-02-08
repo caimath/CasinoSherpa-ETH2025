@@ -1,30 +1,68 @@
-# CasinoSherpa-ETH2025
-### About CasinoSherpa-ETH2025
-The CasinoSherpa-ETH2025 repository is a decentralized casino platform using Ethereum, Avalanche, and BNB. It features multiple games, including Blackjack, Roulette, Slots, Poker, and Dice Games.
+# 🎰 Crypto Sherpa ~ Le Casino Décentralisé
 
-### Features
-- Decentralized casino platform
-- Supports Ethereum, Avalanche, and BNB
-- Includes various casino games
+## 📌 Présentation
 
-### Getting Started
-To get started with the CasinoSherpa-ETH2025 project, follow these steps:
-1. Clone the repository using `git clone https://github.com/caimath/CasinoSherpa-ETH2025.git`
-2. Install the required dependencies
-3. Deploy the contracts using the `deploy.js` script
+Ce projet est un casino décentralisé permettant aux utilisateurs de parier des cryptomonnaies directement depuis MetaMask et Crossmark, sans avoir besoin de faire un dépôt préalable. Grâce à la blockchain, le casino garantit une transparence totale et un fonctionnement entièrement décentralisé.
 
-### Contract Details
-The repository contains Solidity contracts for each game, such as `Blackjack.sol` and `Roulette.sol`. Each contract has functions for placing bets and determining outcomes.
+## 🎯 Avantages
 
-### Gameplay
-The gameplay documentation is available in the `docs` directory. It explains how each game works and provides examples.
+✅ Aucun dépôt requis : Jouez sans avoir à transférer vos fonds vers une plateforme tierce.
+✅ Décentralisation : Tout est géré sur la blockchain, supprimant ainsi tout intermédiaire.
+✅ Transparence : Les transactions et résultats des jeux sont vérifiables directement sur la blockchain.
 
-### Example Code
-```solidity
-function bet(uint256 _betAmount) public {
-    // Logic to handle player's bet and determine winner
-}
-```
+## 🎮 Jeux disponibles
 
-### Conclusion
-The CasinoSherpa-ETH2025 repository provides a decentralized casino platform with various games. By following the documentation and example code, you can understand how the system works and even deploy your own contracts.
+Le casino propose actuellement plusieurs jeux classiques :
+
+🪙 Pile ou Face
+
+🃏 Blackjack
+
+🎡 Roulette
+
+D'autres jeux sont en cours de développement pour enrichir l'expérience des joueurs !
+
+## 🔮 Prochaines fonctionnalités
+
+Nous avons pour ambition d'ajouter :
+
+📈 Paris sportifs
+
+🆚 Duels 1v1 entre amis
+
+♟️ Jeux stratégiques comme les échecs, le morpion et bien d'autres.
+
+## 🚀 Technologie utilisée
+
+Smart Contracts en Solidity
+
+Interface utilisateur en React & TypeScript
+
+Vérification d'âge via XRPL et ses stablecoins (En cours de développement)
+
+Intégration de MetaMask et Crossmark
+
+## 🛠 Installation et utilisation
+
+Clonez le dépôt :
+
+git clone https://github.com/votre-repo/casino-dapp.git
+cd casino-dapp
+
+Installez les dépendances :
+
+npm install
+
+Démarrez l'application :
+
+npm start
+
+🤝 Contribuer
+
+Les contributions sont les bienvenues ! N'hésitez pas à proposer des idées ou à participer au développement.
+
+📜 Licence
+
+Ce projet est sous licence MIT.
+
+💡 Rejoignez-nous dans la révolution du jeu décentralisé ! 🎲
