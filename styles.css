@@ -1,0 +1,177 @@
+/* =====================================================
+   Reset et Styles de Base
+   ===================================================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1e1e1e, #3a3a3a);
+    color: #fff;
+    transition: background 0.5s ease, color 0.5s ease;
+  }
+  
+  /* Mode Jour/Nuit */
+  body.night-mode {
+    background: #f0f0f0;
+    color: #333;
+  }
+  
+  /* =====================================================
+     Conteneur Central
+     ===================================================== */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* =====================================================
+     Styles de l'Entête et Menu Déroulant
+     ===================================================== */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+  }
+  
+  header h1 {
+    font-size: 2rem;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    position: relative;
+  }
+  
+  /* Bouton du Dropdown */
+  .dropbtn {
+    background: #00d1b2;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .dropbtn:hover {
+    background: #00bfa5;
+  }
+  
+  /* Contenu du Dropdown */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #444;
+    min-width: 150px;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: #fff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s ease;
+  }
+  
+  .dropdown-content a:hover {
+    background: #555;
+  }
+  
+  /* Afficher le dropdown au survol */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* =====================================================
+     Section de Connexion
+     ===================================================== */
+  #login-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+  }
+  
+  /* =====================================================
+     Boutons
+     ===================================================== */
+  button {
+    background: #00d1b2;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+  }
+  
+  /* =====================================================
+     Section de Sélection de Jeux
+     ===================================================== */
+  #game-section {
+    padding: 20px;
+  }
+  
+  /* Grille de Jeux */
+  .game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Cartes de Jeu */
+  .game-card {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  
+  .game-card:hover {
+    transform: translateY(-5px);
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Infos du Compte */
+  .account-info {
+    margin-top: 20px;
+    font-size: 1.1rem;
+  }
+  
+  /* =====================================================
+     Responsive
+     ===================================================== */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      text-align: center;
+    }
+    nav ul {
+      flex-direction: column;
+      margin-top: 10px;
+    }
+  }

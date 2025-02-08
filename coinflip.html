@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Pile ou Face - Crypto Casino</title>
+  <link rel="stylesheet" href="coinflip.css">
+  <!-- Inclusion d'ethers.js via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Pile ou Face</h1>
+      <a href="index.html" class="back-button">Retour</a>
+    </header>
+    
+    <!-- Zone de la pièce animée -->
+    <div class="coin-container">
+      <div id="coin" class="coin">
+        <div class="side heads">PILE</div>
+        <div class="side tails">FACE</div>
+      </div>
+    </div>
+    
+    <!-- Section de mise -->
+    <div class="bet-section">
+      <input type="text" id="betAmount" placeholder="Votre mise en ETH">
+      <button id="flipButton">Lancer le Pari</button>
+    </div>
+    
+    <!-- Zone d'affichage du résultat -->
+    <div id="result" class="result"></div>
+  </div>
+  
+  <script>
+    // Remplacez cette adresse par celle de votre contrat déployé
+    const contractAddress = "0xYourContractAddressHere";
+    
+    // ABI minimale du contrat CoinFlip
+    const coinFlipAbi = [
+      {
+        "inputs": [],
+        "name": "bet",
+        "outputs": [],
+        "stateMutability": "payable",
+        "type": "function"
+      },
+      {
+        "anonymous": false,
+        "inputs": [
+          { "indexed": true, "internalType": "address", "name": "player", "type": "address" },
+          { "indexed": false, "internalType": "uint256", "name": "amountBet", "type": "uint256" },
+          { "indexed": false, "internalType": "bool", "name": "win", "type": "bool" }
+        ],
+        "name": "BetResult",
+        "type": "event"
+      }
+    ];
+    
+    let provider, signer, contract;
+    
+    // Initialise la connexion avec MetaMask
+    async function initWallet() {
+      if (typeof window.ethereum !== 'undefined') {
+        await ethereum.request({ method: 'eth_requestAccounts' });
+        provider = new ethers.providers.Web3Provider(window.ethereum);
+        signer = provider.getSigner();
+        contract = new ethers.Contract(contractAddress, coinFlipAbi, signer);
+      } else {
+        alert("Veuillez installer MetaMask !");
+      }
+    }
+    
+    // Fonction qui déclenche le pari et l'animation
+    async function flipCoin() {
+      const betInput = document.getElementById("betAmount");
+      const betValue = betInput.value;
+      
+      if (!betValue || isNaN(betValue) || parseFloat(betValue) <= 0) {
+        alert("Veuillez entrer une mise valide en ETH");
+        return;
+      }
+      
+      // Réinitialiser le résultat affiché
+      document.getElementById("result").innerText = "";
+      
+      // Démarrer l'animation de la pièce
+      const coin = document.getElementById("coin");
+      coin.classList.add("flipping");
+      
+      try {
+        // Appel au contrat : envoyer la mise à la fonction bet()
+        const tx = await contract.bet({ value: ethers.utils.parseEther(betValue) });
+        // Attendre la confirmation de la transaction
+        const receipt = await tx.wait();
+        // Récupérer l'événement BetResult pour obtenir le résultat (gagné/perdu)
+        const event = receipt.events.find(e => e.event === "BetResult");
+        const win = event.args.win;
+        
+        // Laisser l'animation se dérouler (3 secondes) puis afficher le résultat
+        setTimeout(() => {
+          coin.classList.remove("flipping");
+          if (win) {
+            // Pour un gain, afficher la face PILE (0°)
+            coin.style.transform = "rotateY(0deg)";
+            document.getElementById("result").innerText = "GAGNÉ !";
+          } else {
+            // Pour une perte, afficher la face FACE (180°)
+            coin.style.transform = "rotateY(180deg)";
+            document.getElementById("result").innerText = "PERDU !";
+          }
+        }, 3000);
+      } catch (error) {
+        console.error("Erreur lors du pari :", error);
+        coin.classList.remove("flipping");
+        document.getElementById("result").innerText = "Erreur lors du pari";
+      }
+    }
+    
+    // Attache les événements sur le bouton de pari
+    document.getElementById("flipButton").addEventListener("click", async function() {
+      // Initialiser le wallet si ce n'est pas déjà fait
+      if (!provider) await initWallet();
+      flipCoin();
+    });
+  </script>
+</body>
+</html>

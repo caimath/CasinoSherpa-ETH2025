@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Crypto Casino - Sélection de Jeux</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Inclusion d'ethers.js depuis un CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+</head>
+<body>
+  <!-- SECTION DE CONNEXION -->
+  <section id="login-section">
+    <div class="container">
+      <h1>Bienvenue sur Crypto Casino</h1>
+      <p>Veuillez connecter votre wallet pour continuer</p>
+      <button id="connectButton">Connecter MetaMask</button>
+    </div>
+  </section>
+
+  <!-- SECTION DE SÉLECTION DE JEUX -->
+   
+  <section id="game-section" style="display: none;">
+    <!-- Entête et Menu -->
+    <header>
+      <h1>Crypto Casino</h1>
+      <nav>
+        <ul>
+          <li class="dropdown">
+            <button class="dropbtn">Menu &#9662;</button>
+            <div class="dropdown-content">
+              <a href="#" id="profileOption">Modifier Profil</a>
+              <a href="#" id="modeToggle">Mode Jour/Nuit</a>
+              <a href="#" id="withdrawOption">Withdraw</a>
+              <a href="#" id="refillOption">Refill Compte</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <h2>Choisissez votre jeu</h2>
+      <div class="game-grid">
+        <div class="game-card" id="game-coinflip">
+          <h3>Pile ou Face</h3>
+          <!-- Vous pouvez ajouter ici une image d'illustration -->
+        </div>
+        <div class="game-card" id="game-roulette">
+          <h3>Roulette</h3>
+        </div>
+        <div class="game-card" id="game-blackjack">
+          <h3>Blackjack</h3>
+        </div>
+        <!-- Ajoutez d'autres cartes de jeu selon vos besoins -->
+      </div>
+      <div class="account-info">
+        <p>Connecté en tant que : <span id="accountDisplay"></span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCRIPT JAVASCRIPT -->
+  <script>
+    let provider, signer, account;
+
+    // Fonction de connexion via MetaMask
+    async function connectWallet() {
+      if (typeof window.ethereum !== 'undefined') {
+        try {
+          await ethereum.request({ method: 'eth_requestAccounts' });
+          provider = new ethers.providers.Web3Provider(window.ethereum);
+          signer = provider.getSigner();
+          account = await signer.getAddress();
+          document.getElementById("accountDisplay").innerText = account;
+          // Masquer la section de connexion et afficher la section de jeux
+          document.getElementById("login-section").style.display = "none";
+          document.getElementById("game-section").style.display = "block";
+        } catch (err) {
+          console.error("Erreur lors de la connexion :", err);
+        }
+      } else {
+        alert("Veuillez installer MetaMask !");
+      }
+    }
+
+    document.getElementById("connectButton").addEventListener("click", connectWallet);
+
+    // Toggle pour le mode Jour/Nuit
+    document.getElementById("modeToggle").addEventListener("click", function(e) {
+      e.preventDefault();
+      document.body.classList.toggle("night-mode");
+    });
+
+    // Autres options du menu (demo)
+    document.getElementById("profileOption").addEventListener("click", function(e) {
+      e.preventDefault();
+      alert("Modifier Profil (fonctionnalité à implémenter)");
+    });
+    document.getElementById("withdrawOption").addEventListener("click", function(e) {
+      e.preventDefault();
+      alert("Withdraw (fonctionnalité à implémenter)");
+    });
+    document.getElementById("refillOption").addEventListener("click", function(e) {
+      e.preventDefault();
+      alert("Refill Compte (fonctionnalité à implémenter)");
+    });
+
+    // Événements sur les cartes de jeu (demo)
+    document.getElementById("game-coinflip").addEventListener("click", function() {
+      alert("Lancement du jeu Pile ou Face");
+    });
+    document.getElementById("game-roulette").addEventListener("click", function() {
+      alert("Lancement du jeu Roulette");
+    });
+    document.getElementById("game-blackjack").addEventListener("click", function() {
+      alert("Lancement du jeu Blackjack");
+    });
+  </script>
+</body>
+</html>
