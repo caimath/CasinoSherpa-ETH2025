@@ -6,9 +6,9 @@ Ce projet est un casino décentralisé permettant aux utilisateurs de parier des
 
 ## 🎯 Avantages
 
-✅ Aucun dépôt requis : Jouez sans avoir à transférer vos fonds vers une plateforme tierce.
-✅ Décentralisation : Tout est géré sur la blockchain, supprimant ainsi tout intermédiaire.
-✅ Transparence : Les transactions et résultats des jeux sont vérifiables directement sur la blockchain.
+✅ Aucun dépôt requis : Jouez sans avoir à transférer vos fonds vers une plateforme tierce.  
+✅ Décentralisation : Tout est géré sur la blockchain, supprimant ainsi tout intermédiaire.  
+✅ Transparence : Les transactions et résultats des jeux sont vérifiables directement sur la blockchain.  
 
 ## 🎮 Jeux disponibles
 
