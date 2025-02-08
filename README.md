@@ -1,14 +1,16 @@
-🎰 Crypto Sherpa ~ The Decentralized Casino
+# 🎰 Crypto Sherpa ~ The Decentralized Casino
 
-📌 Introduction
+## 📌 Introduction
 
 This project is a decentralized casino that allows users to bet cryptocurrencies directly from MetaMask and Crossmark, without the need to make a prior deposit. Thanks to blockchain technology, the casino guarantees complete transparency and fully decentralized operation.
 
-🎯 Advantages
+## 🎯 Advantages
 
-✅ No deposit required: Play without transferring your funds to a third-party platform.✅ Decentralization: Everything is managed on the blockchain, eliminating intermediaries.✅ Transparency: Transactions and game results are verifiable directly on the blockchain.
+✅ No deposit required: Play without transferring your funds to a third-party platform.  
+✅ Decentralization: Everything is managed on the blockchain, eliminating intermediaries.  
+✅ Transparency: Transactions and game results are verifiable directly on the blockchain.  
 
-🎮 Available Games
+## 🎮 Available Games
 
 The casino currently offers several classic games:
 
@@ -20,7 +22,7 @@ The casino currently offers several classic games:
 
 More games are under development to enhance the player experience!
 
-🔮 Upcoming Features
+## 🔮 Upcoming Features
 
 We aim to add:
 
@@ -30,7 +32,7 @@ We aim to add:
 
 ♟️ Strategic games such as chess, tic-tac-toe, and many others.
 
-🚀 Technology Used
+## 🚀 Technology Used
 
 Smart Contracts in Solidity
 
@@ -40,11 +42,11 @@ Age verification via XRPL and its stablecoins (Under development)
 
 Integration of MetaMask and Crossmark
 
-🛠 Installation and Usage
+## 🛠 Installation and Usage
 
 Clone the repository:
 
-git clone https://github.com/your-repo/casino-dapp.git
+git clone https://github.com/your-repo/casino-dapp.git  
 cd casino-dapp
 
 Install dependencies:
@@ -55,12 +57,12 @@ Start the application:
 
 npm start
 
-🤝 Contribute
+## 🤝 Contribute
 
 Contributions are welcome! Feel free to propose ideas or participate in development.
 
-📜 License
+## 📜 License
 
 This project is licensed under the MIT License.
 
-💡 Join us in the revolution of decentralized gaming! 🎲
+**💡 Join us in the revolution of decentralized gaming! 🎲**
