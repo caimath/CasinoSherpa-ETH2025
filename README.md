@@ -1,68 +1,66 @@
-# 🎰 Crypto Sherpa ~ Le Casino Décentralisé
+🎰 Crypto Sherpa ~ The Decentralized Casino
 
-## 📌 Présentation
+📌 Introduction
 
-Ce projet est un casino décentralisé permettant aux utilisateurs de parier des cryptomonnaies directement depuis MetaMask et Crossmark, sans avoir besoin de faire un dépôt préalable. Grâce à la blockchain, le casino garantit une transparence totale et un fonctionnement entièrement décentralisé.
+This project is a decentralized casino that allows users to bet cryptocurrencies directly from MetaMask and Crossmark, without the need to make a prior deposit. Thanks to blockchain technology, the casino guarantees complete transparency and fully decentralized operation.
 
-## 🎯 Avantages
+🎯 Advantages
 
-✅ Aucun dépôt requis : Jouez sans avoir à transférer vos fonds vers une plateforme tierce.  
-✅ Décentralisation : Tout est géré sur la blockchain, supprimant ainsi tout intermédiaire.  
-✅ Transparence : Les transactions et résultats des jeux sont vérifiables directement sur la blockchain.  
+✅ No deposit required: Play without transferring your funds to a third-party platform.✅ Decentralization: Everything is managed on the blockchain, eliminating intermediaries.✅ Transparency: Transactions and game results are verifiable directly on the blockchain.
 
-## 🎮 Jeux disponibles
+🎮 Available Games
 
-Le casino propose actuellement plusieurs jeux classiques :
+The casino currently offers several classic games:
 
-🪙 Pile ou Face
+🪙 Coin Flip
 
 🃏 Blackjack
 
 🎡 Roulette
 
-D'autres jeux sont en cours de développement pour enrichir l'expérience des joueurs !
+More games are under development to enhance the player experience!
 
-## 🔮 Prochaines fonctionnalités
+🔮 Upcoming Features
 
-Nous avons pour ambition d'ajouter :
+We aim to add:
 
-📈 Paris sportifs
+📈 Sports betting
 
-🆚 Duels 1v1 entre amis
+🆚 1v1 duels between friends
 
-♟️ Jeux stratégiques comme les échecs, le morpion et bien d'autres.
+♟️ Strategic games such as chess, tic-tac-toe, and many others.
 
-## 🚀 Technologie utilisée
+🚀 Technology Used
 
-Smart Contracts en Solidity
+Smart Contracts in Solidity
 
-Interface utilisateur en React & TypeScript
+User interface in React & TypeScript
 
-Vérification d'âge via XRPL et ses stablecoins (En cours de développement)
+Age verification via XRPL and its stablecoins (Under development)
 
-Intégration de MetaMask et Crossmark
+Integration of MetaMask and Crossmark
 
-## 🛠 Installation et utilisation
+🛠 Installation and Usage
 
-Clonez le dépôt :
+Clone the repository:
 
-git clone https://github.com/votre-repo/casino-dapp.git
+git clone https://github.com/your-repo/casino-dapp.git
 cd casino-dapp
 
-Installez les dépendances :
+Install dependencies:
 
 npm install
 
-Démarrez l'application :
+Start the application:
 
 npm start
 
-🤝 Contribuer
+🤝 Contribute
 
-Les contributions sont les bienvenues ! N'hésitez pas à proposer des idées ou à participer au développement.
+Contributions are welcome! Feel free to propose ideas or participate in development.
 
-📜 Licence
+📜 License
 
-Ce projet est sous licence MIT.
+This project is licensed under the MIT License.
 
-💡 Rejoignez-nous dans la révolution du jeu décentralisé ! 🎲
+💡 Join us in the revolution of decentralized gaming! 🎲
