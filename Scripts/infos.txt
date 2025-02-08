@@ -1,0 +1,9 @@
+To run this code you need to install node.js. 
+After that, create a project React with this commande : 
+    => npx create-next-app@latest casino-crypto
+
+Go on the file 'crypto-casino' and install the librairies : 
+    => npm install ethers framer-motion lucide-react @shadcn/ui
+
+All of file inside this folder need to be place in the folder : 
+    => casino-crypto/app.
