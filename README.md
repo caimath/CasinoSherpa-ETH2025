@@ -38,7 +38,11 @@ Smart Contracts in Solidity
 
 User interface in React & TypeScript
 
-Age verification via XRPL and its stablecoins (Under development)
+Age verification via XRPL and its stablecoins (Under development) 
+
+AI agent with Nerd (Under development)
+
+We got help from nerd ai to fix some bugs  
 
 Integration of MetaMask and Crossmark
 
